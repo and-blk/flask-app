@@ -32,7 +32,7 @@ def search_store(name):
     for store in stores:
         if store["name"] == name:
             return jsonify(store)
-    return jsonify({"message": "no such store"})
+    return jsonify({"message": f"no store with name: {name}"})
 
 
 @app.route('/store/<string:name>/item')
@@ -40,7 +40,7 @@ def search_store_item(name):
     for store in stores:
         if store["name"] == name:
             return jsonify(store["items"])
-    return jsonify({"message": "no such store"})
+    return jsonify({"message": f"no store with name: {name}"})
 
 
 @app.route('/store/<string:name>/item', methods=['POST'])
@@ -50,7 +50,7 @@ def add_item(name):
         if name == store["name"]:
             store["items"].append(request_data)
             return jsonify(stores)
-    return jsonify({"message": "no such store"})
+    return jsonify({"message": f"no store with name: {name}"})
 
 
 
