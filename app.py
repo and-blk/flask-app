@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
-
+app.config.from_object('config')
 stores = [
     {
         "name": "Andrey store",
@@ -54,4 +54,4 @@ def add_item(name):
 
 
 
-app.run(port=5000)
+app.run(host="0.0.0.0", port=5000)
