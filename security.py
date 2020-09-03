@@ -1,4 +1,6 @@
 from user import User
+# from flask_jwt import JWT, jwt_required
+# from app import app
 
 users = [
     User(1, "Andrey", "qwerty"),
@@ -17,4 +19,5 @@ def authenticate(username, password):
 def identity(payload):
     user_id = payload['identity']
     return userid_mapping.get(user_id, None)
+
 

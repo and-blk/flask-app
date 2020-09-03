@@ -1,14 +1,11 @@
 from flask_restful import Resource
 from flask import request
-from security import authenticate, identity
-from flask_jwt import JWT, jwt_required
-
-
-from app import app
-
-jwt = JWT(app, authenticate, identity)
+from flask_jwt import jwt_required
 
 items = []
+
+
+
 
 class Item(Resource):
 
@@ -28,5 +25,6 @@ class Item(Resource):
 
 
 class ItemList(Resource):
+    #@jwt_required
     def get(self):
         return {"items": items}
