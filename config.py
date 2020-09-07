@@ -1,3 +1,3 @@
 DEBUG = True
-FLASK_ENV = "Development"
-secret_key = "my_key"
+ENV = "Development"
+SECRET_KEY = "my_key"

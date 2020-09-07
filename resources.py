@@ -8,8 +8,6 @@ items = []
 
 
 class Item(Resource):
-
-    @jwt_required
     def get(self, name):
         for item in items:
             if item["name"] == name:
@@ -25,6 +23,6 @@ class Item(Resource):
 
 
 class ItemList(Resource):
-    #@jwt_required
+    @jwt_required()
     def get(self):
         return {"items": items}

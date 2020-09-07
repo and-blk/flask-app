@@ -1,6 +1,4 @@
 from user import User
-# from flask_jwt import JWT, jwt_required
-# from app import app
 
 users = [
     User(1, "Andrey", "qwerty"),
