@@ -3,9 +3,6 @@ from flask_restful import Api
 import resources
 from security import identity, authenticate
 from flask_jwt import JWT, jwt_required
-from flask_restful import Resource
-from flask import request
-from user import User
 
 
 
